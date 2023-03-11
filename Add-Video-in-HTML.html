@@ -1,0 +1,21 @@
+<!DOCTYPE html> <!-- declares the document type -->
+<html> <!-- starts the HTML document -->
+  <head> <!-- contains the document's metadata -->
+    <title>My Video</title> <!-- sets the title of the document -->
+  </head>
+  <body> <!-- contains the visible content of the document -->
+    <video width="640" height="360" controls> <!-- creates a video element with width, height, and controls attributes -->
+      <source src="my_video.mp4" type="video/mp4"> <!-- specifies the source file for the video and its type -->
+      Your browser does not support the video tag. <!-- fallback message for browsers that don't support the video tag -->
+      
+      <!-- Add additional video sources for different formats -->
+      <source src="my_video.webm" type="video/webm">
+      <source src="my_video.ogg" type="video/ogg">
+      
+    </video>
+    
+    <!-- Add a message to display if the browser doesn't support the video tag -->
+    <p>Your browser does not support the video tag.</p>
+    
+  </body>
+</html> <!-- closes the HTML document -->
