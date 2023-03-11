@@ -1,0 +1,42 @@
+<form>
+  <!-- Wrap each group of related form elements in a fieldset element, with a legend element to provide a title for each group -->
+  <fieldset>
+    <legend>Contact Information</legend>
+
+    <!-- Group the Name label and input elements in a div element -->
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <!-- Group the Email label and input elements in a div element -->
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <!-- Group the Phone label and input elements in a div element -->
+    <div>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+
+  </fieldset>
+
+  <!-- Wrap the Message label and textarea elements in a fieldset element, with a legend element to provide a title -->
+  <fieldset>
+    <legend>Message</legend>
+
+    <!-- Group the Message label and textarea elements in a div element -->
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+
+  </fieldset>
+
+  <!-- Place the submit button in its own div element -->
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>
