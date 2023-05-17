@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+  <style link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    .error {
+      color: red;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var nameInput = document.getElementById("name");
+      var emailInput = document.getElementById("email");
+      var passwordInput = document.getElementById("password");
+      var messageInput = document.getElementById("message");
+      var errorContainer = document.getElementById("error");
+      var isValid = true;
+
+      errorContainer.innerHTML = "";
+
+      // Validate name
+      var name = nameInput.value.trim();
+      var nameRegex = /^[a-zA-Z\s]*$/;
+      if (!name.match(nameRegex)) {
+        errorContainer.innerHTML += "Name should contain only alphabets and spaces.<br>";
+        isValid = false;
+      }
+
+      // Validate email
+      var email = emailInput.value.trim();
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.match(emailRegex)) {
+        errorContainer.innerHTML += "Email should be in the format example@example.com.<br>";
+        isValid = false;
+      }
+
+      // Validate password
+      var password = passwordInput.value.trim();
+      var passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$/;
+      if (!password.match(passwordRegex)) {
+        errorContainer.innerHTML += "Password should be at least 8 characters long and contain at least one digit and one symbol.<br>";
+        isValid = false;
+      }
+
+      // Validate message length
+      var message = messageInput.value.trim();
+      var wordCount = message.split(/\s+/).length;
+      if (wordCount < 5 || wordCount > 10) {
+        errorContainer.innerHTML += "Message should contain 5 to 10 words.<br>";
+        isValid = false;
+      }
+
+      return isValid;
+    }
+  </script>
+</head>
+<body>
+  <h1>Contact Form</h1>
+  <form onsubmit="return validateForm()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <div id="error" class="error"></div>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
